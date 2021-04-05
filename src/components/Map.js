@@ -1,5 +1,6 @@
 import React from 'react'
 import 'leaflet/dist/leaflet.css';
+// import Mark from './common/Mark'
 
 
 
@@ -40,7 +41,7 @@ function LocationMarker() {
   )
 }
 
-export default function MapDemo() {
+export default function MapDemo(props) {
 
 
   return (
@@ -60,8 +61,11 @@ export default function MapDemo() {
   <LocationMarker/>
 
 
+  {props.children}
 
-      
+
+
+
   
 </MapContainer>
 </>

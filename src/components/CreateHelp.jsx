@@ -21,6 +21,14 @@ class CreateHelp extends ActionCableBase {
   }
 
   async componentDidMount() {
+   
+
+ navigator.geolocation.getCurrentPosition(this.getPosition)
+    //   function(error) {
+    //     console.error("Error Code = " + error.code + " - " + error.message);
+    //   }
+    // );
+
     const categories = await helpService.categories();
     this.setState({categories});
     this.subscription = this.consumer.subscriptions.create({channel: 'HelpsChannel', id: 1 }, {
@@ -28,7 +36,15 @@ class CreateHelp extends ActionCableBase {
         // console.log(data);
       }
     });
-  }
+  };
+    getPosition (position){
+      const currentPosition = {
+        lat: position.coords.latitude,
+        long: position.coords.longitude
+      }
+      if (position.coords) this.setState({lat: position.coords.latitude,  long: position.coords.longitude});
+
+    };
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
@@ -127,12 +143,14 @@ class CreateHelp extends ActionCableBase {
                   
                   <div className="form-group mb-2">
                     <label className="control-label">Longitude</label>
-                    <input className="form-control" value={long} name="long" onChange={this.handleChange} placeholder="{this.props.position.long}"/>
+                    <input className="form-control" value={this.props.long} name="long" 
+                    onChange={this.handleChange} placeholder="{this.props.position.long}"/>
                   </div>
 
                   <div className="form-group mb-2">
                     <label className="control-label">Latitude</label>
-                    <input className="form-control" value={lat} name="lat" onChange={this.handleChange} placeholder="{this.props.position.lat}"/>
+                    <input className="form-control" value={this.props.lat} name="lat" 
+                    onChange={this.handleChange} placeholder="{this.props.position.lat}"/>
                   </div>
                   
                   <button 

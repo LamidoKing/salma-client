@@ -15,12 +15,12 @@ import './Home.css'
 class Home extends ActionCableBase {
   state = {
     user: null,
-    center: {
+    // center: {
   
-      lat: -1.2717025,
-      lng: 36.8380528
-    },
-    zoom: 13,
+    //   lat: -1.2717025,
+    //   lng: 36.8380528
+    // },
+    // zoom: 13,
     helps: [],
     showModal: false,
     help: null
@@ -117,26 +117,17 @@ class Home extends ActionCableBase {
        <div className="row">
         <div className="col-md-8 col-sm-12">
         
-            {/* <GoogleMapReact
-              bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
-              defaultCenter={this.state.center}
-              defaultZoom={this.state.zoom}
-              mapTypId="SATELLITE"
-              yesIWantToUseGoogleMapApiInternals
-              onBoundsChange={this.handleBoundsChange}
-            >
-              {
-                helps && helps.map((help) => {
-                  return <Marker lat={help.lat} lng={help.long} handleOpen={() => this.handleModalOpen(help)} key={help.id} type={help.category.color} /> 
-                })
-              }
-            </GoogleMapReact> */}
+         
             <Map>
+             
             {
                 helps && helps.map((help) => {
-                  return <Mark lat={help.lat} lng={help.long} handleOpen={() => this.handleModalOpen(help)} key={help.id} type={help.category.color} /> 
+                  return <Mark lat={help.lat} help={help}
+                  lng={help.long} handleOpen={() => this.handleModalOpen(help)} 
+                  key={help.id} type={help.category.color} /> 
                 })
               }
+            
               </Map>
           
         </div>
@@ -222,6 +213,8 @@ class Home extends ActionCableBase {
 
   handleModalOpen = (help) => {
     this.setState({help, showModal: true});
+
+    console.log("click")
   }
 
 }
