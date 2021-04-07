@@ -9,7 +9,7 @@ import actioncable from 'actioncable';
 
 const CableApp = {}
 
-CableApp.cable = actioncable.createConsumer(`ws://localhost:8800/cable?token=${userService.token()}`)
+CableApp.cable = actioncable.createConsumer(`ws://https://fast-ridge-64559.herokuapp.com/cable?token=${userService.token()}`)
 
 class Front extends Component {
   state = {

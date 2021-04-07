@@ -15,7 +15,7 @@ class UserService extends BaseService {
 
   async register(data) {
     try {
-      const response = await Axios.post(`http://localhost:3000/api/v1/users`, 
+      const response = await Axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/users`, 
       JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ class UserService extends BaseService {
   async login(email, password) {
     store.dispatch(clearUserToken());
     try {
-      const response = await Axios.post(`http://localhost:3000/api/v1/login`, { email, password });
+      const response = await Axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/login`, { email, password });
       if (response.status === 200) {
         const token = response.data.token;
         store.dispatch(setUserToken(token));

@@ -5,7 +5,7 @@ class HelpService extends BaseService {
 
   async create(data) {
     try {
-      const response = await axios.post(`http://localhost:3000/api/v1/helps`, JSON.stringify(data), {
+      const response = await axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/helps`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -26,7 +26,7 @@ class HelpService extends BaseService {
 
   async delete(id) {
     try {
-      const response = await axios.delete(`http://localhost:3000/api/v1/helps/${id}`, 
+      const response = await axios.delete(`https://fast-ridge-64559.herokuapp.com/api/v1/helps/${id}`, 
        {
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class HelpService extends BaseService {
 
   async update(data) {
     try {
-      const response = await axios.patch(`http://localhost:3000/api/v1/helps/${data.id}`,  JSON.stringify(data),
+      const response = await axios.patch(`https://fast-ridge-64559.herokuapp.com/api/v1/helps/${data.id}`,  JSON.stringify(data),
        {
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ class HelpService extends BaseService {
 
   async getHelps() {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/helps`, {
+      const response = await axios.get(`https://fast-ridge-64559.herokuapp.com/api/v1/helps`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -91,7 +91,7 @@ class HelpService extends BaseService {
   async getHelpsByCoordinates(tl, ll, bl, rl) {
     try {
       const response = await axios.get(`
-        http://localhost:3000/api/v1/helps?coordinates=true&leftLong=${ll}&rightLong=${rl}&topLat=${tl}&bottomLat=${bl}`, 
+        https://fast-ridge-64559.herokuapp.com/api/v1/helps?coordinates=true&leftLong=${ll}&rightLong=${rl}&topLat=${tl}&bottomLat=${bl}`, 
       {
         headers: {
           'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ class HelpService extends BaseService {
 
   async getHelp(id) {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/helps/${id}`, {
+      const response = await axios.get(`https://fast-ridge-64559.herokuapp.com/api/v1/helps/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -128,7 +128,7 @@ class HelpService extends BaseService {
 
   async myHelps(id) {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/helps/me`, {
+      const response = await axios.get(`https://fast-ridge-64559.herokuapp.com/api/v1/helps/me`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -146,7 +146,7 @@ class HelpService extends BaseService {
 
   async categories() {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/categories`, {
+      const response = await axios.get(`https://fast-ridge-64559.herokuapp.com/api/v1/categories`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -166,7 +166,7 @@ class HelpService extends BaseService {
 
   async reopen(id) {
     try {
-      const response = await axios.post(`http://localhost:3000/api/v1/helps/reopen`, JSON.stringify({id}), {
+      const response = await axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/helps/reopen`, JSON.stringify({id}), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
