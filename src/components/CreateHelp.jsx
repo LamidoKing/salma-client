@@ -6,28 +6,29 @@ import ActionCableBase from './ActionCableBase';
 import people from '../images/undraw3.svg';
 
 class CreateHelp extends ActionCableBase {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: [],
+      title: '',
+      category: '',
+      description: '',
+      long: '',
+      lat: '',
+      hasError: false,
+      message: "",
+      loading: false
+    };
+  }
   
 
-  state = { 
-    categories: [],
-    title: '',
-    category: '',
-    description: '',
-    long: '',
-    lat: '',
-    hasError: false,
-    message: "",
-    loading: false
-  }
+
 
   async componentDidMount() {
    
 
  navigator.geolocation.getCurrentPosition(this.getPosition)
-    //   function(error) {
-    //     console.error("Error Code = " + error.code + " - " + error.message);
-    //   }
-    // );
+      
 
     const categories = await helpService.categories();
     this.setState({categories});
@@ -37,14 +38,22 @@ class CreateHelp extends ActionCableBase {
       }
     });
   };
+
     getPosition (position){
       const currentPosition = {
         lat: position.coords.latitude,
         long: position.coords.longitude
       }
-      if (position.coords) this.setState({lat: position.coords.latitude,  long: position.coords.longitude});
+      // if (position.coords) return this.setState({lat: position.coords.latitude,  long: position.coords.longitude});
+console.log(currentPosition)
 
+this.setState({
+  
+
+})
     };
+
+
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
@@ -144,13 +153,13 @@ class CreateHelp extends ActionCableBase {
                   <div className="form-group mb-2">
                     <label className="control-label">Longitude</label>
                     <input className="form-control" value={this.props.long} name="long" 
-                    onChange={this.handleChange} placeholder="{this.props.position.long}"/>
+                    onChange={this.handleChange} placeholder=""/>
                   </div>
 
                   <div className="form-group mb-2">
                     <label className="control-label">Latitude</label>
                     <input className="form-control" value={this.props.lat} name="lat" 
-                    onChange={this.handleChange} placeholder="{this.props.position.lat}"/>
+                    onChange={this.handleChange} placeholder=""/>
                   </div>
                   
                   <button 

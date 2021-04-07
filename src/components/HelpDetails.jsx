@@ -8,6 +8,7 @@ import verified from '../images/verified.svg';
 import cancel from '../images/cancel.svg';
 import Helmet from 'react-helmet';
 import moment from 'moment';
+import {Link} from 'react-router-dom'
 
 class HelpDetails extends ActionCableBase {
   constructor(props) {
@@ -58,6 +59,51 @@ class HelpDetails extends ActionCableBase {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  handleDelete = async(id)=>{
+    try{
+      const help = await helpService.delete(id);
+
+      if (help.status==200){
+        this.props.history.push('/dashboard')
+      }
+
+      // console.log(help);
+
+
+    }
+
+    catch (error) {
+      alert(error)
+      // console.log(error)
+    }
+
+  
+
+
+  }
+
+  handleUpdate = async(id)=>{
+    try{
+      const help = await helpService.patch(id);
+
+      if (help.status==200){
+        this.props.history.push('/make-request')
+      }
+
+      // console.log(help);
+
+
+    }
+
+    catch (error) {
+      alert(error)
+      // console.log(error)
+    }
+
+  
+
   }
 
   handleChange = (e) => {
@@ -175,8 +221,10 @@ class HelpDetails extends ActionCableBase {
           
           <p style={{ textAlign: 'justify' }}>{help.description}</p>
 
-          <button className="btn btn-danger pr-3 mr-3">Delete</button>
-          <button className="btn btn-success pr-3">Edit</button>
+          <button className="btn btn-danger pr-3 mr-3" 
+          onClick={()=>this.handleDelete(help.id) }>Delete</button>
+          <Link className="btn btn-success pr-3" to={`/help/update/${help.id}`}>Edit</Link>
+          
 
         </React.Fragment>
         :

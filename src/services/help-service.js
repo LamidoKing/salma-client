@@ -24,6 +24,52 @@ class HelpService extends BaseService {
     }
   }
 
+  async delete(id) {
+    try {
+      const response = await axios.delete(`http://localhost:3000/api/v1/helps/${id}`, 
+       {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${this.token()}`
+        }
+      });
+
+      if (response.status === 200) {
+        return response;
+      } 
+    } catch (error) {
+      if (error.response.status === 404) {
+        return error.response;
+      }
+      throw new Error(error.response)
+    }
+  }
+
+  async update(data) {
+    try {
+      const response = await axios.patch(`http://localhost:3000/api/v1/helps/${data.id}`,  JSON.stringify(data),
+       {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${this.token()}`
+        }
+      });
+
+      if (response.status === 200) {
+        return response;
+        
+      } 
+    } catch (error) {
+      if (error.response.status === 404) {
+        return error.response;
+      }
+      throw new Error(error.response)
+    }
+  }
+
+
   async getHelps() {
     try {
       const response = await axios.get(`http://localhost:3000/api/v1/helps`, {
