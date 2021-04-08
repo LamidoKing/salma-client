@@ -3,6 +3,7 @@ import axios from "axios";
 
 class ChatService extends BaseService {
 
+
   async create(data) {
     try {
       const response = await axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/chats`, JSON.stringify(data), {
@@ -43,4 +44,4 @@ class ChatService extends BaseService {
   }
 }
 
-export default new ChatService;
+export default new ChatService();

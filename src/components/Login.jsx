@@ -69,7 +69,7 @@ class Login extends Component {
             </Link>
           </div>
           <div className="col-md-6 centralize" >
-            <img src={groupChat} width="100%" />
+            <img src={groupChat} alt="" width="100%" />
           </div>
           <div className="col-md-6 form-wrapper">
             <h2 className="page-title">Login</h2>

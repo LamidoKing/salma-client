@@ -65,7 +65,7 @@ class HelpDetails extends ActionCableBase {
     try{
       const help = await helpService.delete(id);
 
-      if (help.status==200){
+      if (help.status===200){
         this.props.history.push('/dashboard')
       }
 
@@ -88,7 +88,7 @@ class HelpDetails extends ActionCableBase {
     try{
       const help = await helpService.patch(id);
 
-      if (help.status==200){
+      if (help.status===200){
         this.props.history.push('/make-request')
       }
 
@@ -204,13 +204,13 @@ class HelpDetails extends ActionCableBase {
         <React.Fragment>
           <div className="row">
             <div className="col-md-12">
-              <img src={help.user.government_id} height="200" style={{ height: '30vh', maxWidth:'100%', marginBottom: '20px' }} />
+              <img src={help.user.government_id} alt="" height="200" style={{ height: '30vh', maxWidth:'100%', marginBottom: '20px' }} />
             </div>
             <div className="col-md-9">
               <h4 className="help-title" style={{ fontSize: '18px' }}>{help.title}</h4>
             </div>
             <div className="col-md-3 text-center">
-              <img src={ fulfilled ? verified : cancel } width="30" />
+              <img src={ fulfilled ? verified : cancel } alt="" width="30" />
               <p className="text-center" style={{ fontSize: '12px' }}>{ fulfilled ? <span className="text-primary">Fulfilled</span> : <span className="text-danger">Unfulfilled</span> }</p>
             </div>
           </div>

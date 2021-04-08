@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet';
-import Alert from './common/Alert';
+// import Alert from './common/Alert';
 import helpService from '../services/help-service';
 // import ActionCableBase from './ActionCableBase';
 import people from '../images/undraw3.svg';
@@ -87,7 +87,7 @@ export default class updateHelp extends Component {
       }
 
     render() {
-        const {title, category, description, long, lat, categories, hasError, message, loading} = this.state;
+        const {title, category, description,  categories,loading} = this.state;
 
     return (
         <React.Fragment>
@@ -151,7 +151,7 @@ export default class updateHelp extends Component {
                   </button>
               </div>
               <div className="col-md-6">
-              <img src={people} style={{ width: '70%', height:'95%' }}/>
+              <img src={people} alt="" style={{ width: '70%', height:'95%' }}/>
 
               </div>
             </div>

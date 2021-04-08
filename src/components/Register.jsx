@@ -125,7 +125,7 @@ class Register extends Component {
             </Link>
           </div>
           <div className="col-md-6 centralize" >
-            <img src={giveBox} width="100%" />
+            <img src={giveBox} alt="" width="100%" />
           </div>
           <div className="col-md-6 form-wrapper">
             <h2 className="page-title">Register</h2>

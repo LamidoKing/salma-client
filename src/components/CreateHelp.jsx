@@ -103,7 +103,7 @@ this.setState({
   }
 
   render() {
-    const {title, category, description, long, lat, categories, hasError, message, loading} = this.state;
+    const {title, category, description,  categories, hasError, message, loading} = this.state;
 
     let messageClasses = "alert";
     if (hasError) messageClasses += " alert-danger";
@@ -171,7 +171,7 @@ this.setState({
                   </button>
               </div>
               <div className="col-md-6">
-              <img src={people} style={{ width: '70%', height:'95%' }}/>
+              <img src={people} alt="" style={{ width: '70%', height:'95%' }}/>
 
               </div>
             </div>

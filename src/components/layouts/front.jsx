@@ -16,7 +16,7 @@ const cableURL =
 
 const CableApp = {}
 
-CableApp.cable = actioncable.createConsumer(`cableURL?token=${userService.token()}`)
+CableApp.cable = actioncable.createConsumer(`${cableURL}?token=${userService.token()}`)
 
 class Front extends Component {
   state = {

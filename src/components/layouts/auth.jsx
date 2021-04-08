@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import redirectIfLoggedIn from "../../middlewares/redirect-if-logged-in";
 import { Helmet } from "react-helmet";
 class AuthLayout extends Component {

@@ -8,10 +8,7 @@ import {
 } from '../redux/actions';
 import store from '../redux/store';
 class UserService extends BaseService {
-  constructor() {
-    super();
-    // this.logout();
-  }
+
 
   async register(data) {
     try {
@@ -98,4 +95,4 @@ class UserService extends BaseService {
 
 }
 
-export default new UserService;
+export default new UserService();

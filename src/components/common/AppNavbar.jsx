@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { navigationLinks } from "./constants/navigation-links";
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 import { isLoggedIn } from "../../common/helpers";
 import Logo from "./Logo";
 import '../../components/Home.css'
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const AppNavbar = ({ containerized, logout, user }) => {
-  const pages = navigationLinks.filter(nav => nav.useInNavbar === true);
+  // const pages = navigationLinks.filter(nav => nav.useInNavbar === true);
 
 
 

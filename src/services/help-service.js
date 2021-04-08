@@ -187,4 +187,4 @@ class HelpService extends BaseService {
 
 }
 
-export default new HelpService;
+export default new HelpService();
