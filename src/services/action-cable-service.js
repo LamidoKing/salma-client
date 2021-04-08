@@ -1,8 +1,14 @@
 import userService from "./user-service";
 import ActionCable from 'actioncable'
 
+
+const cableURL =
+  window.location.hostname === "localhost"
+    ? "ws://localhost:3000/cable"
+    : "wss://fast-ridge-64559.herokuapp.com/cable"
+
 const consumer = () => {
-  return ActionCable.createConsumer(`ws://https://fast-ridge-64559.herokuapp.com/cable?token=${userService.token()}`);
+  return ActionCable.createConsumer(`cableURL?token=${userService.token()}`);
 }
 
 export const HelpChannel = () => {

@@ -7,9 +7,16 @@ import redirectIfNotLoggedIn from "../../middlewares/redirect-if-not-logged-in";
 import { Helmet } from 'react-helmet';
 import actioncable from 'actioncable';
 
+
+const cableURL =
+  window.location.hostname === "localhost"
+    ? "ws://localhost:3000/cable"
+    : "wss://fast-ridge-64559.herokuapp.com/cable"
+
+
 const CableApp = {}
 
-CableApp.cable = actioncable.createConsumer(`ws://https://fast-ridge-64559.herokuapp.com/cable?token=${userService.token()}`)
+CableApp.cable = actioncable.createConsumer(`cableURL?token=${userService.token()}`)
 
 class Front extends Component {
   state = {
