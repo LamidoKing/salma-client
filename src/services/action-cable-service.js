@@ -1,11 +1,11 @@
 import userService from "./user-service";
 import ActionCable from 'actioncable'
-import {cableURL} from './UrlServices'
+import URL from './UrlServices'
 
 
 
 const consumer = () => {
-  return ActionCable.createConsumer(`${cableURL}?token=${userService.token()}`);
+  return ActionCable.createConsumer(`${URL.cableURLL}?token=${userService.token()}`);
 }
 
 export const HelpChannel = () => {

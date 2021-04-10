@@ -8,7 +8,7 @@ import {
 } from '../redux/actions';
 import store from '../redux/store';
 
-import {baseURL} from './UrlServices'
+import URL from './UrlServices'
 
 class UserService extends BaseService {
 
@@ -18,7 +18,7 @@ class UserService extends BaseService {
     
 
     try {
-      const response = await Axios.post(`${baseURL}/users`, 
+      const response = await Axios.post(`${URL.baseURL}/users`, 
       JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class UserService extends BaseService {
   async login(email, password) {
     store.dispatch(clearUserToken());
     try {
-      const response = await Axios.post(`${baseURL}/login`, { email, password });
+      const response = await Axios.post(`${URL.baseURL}/login`, { email, password });
       if (response.status === 200) {
         const token = response.data.token;
         store.dispatch(setUserToken(token));
@@ -71,7 +71,7 @@ class UserService extends BaseService {
     if (this.getUser()) {
       return this.getUser();
     } else {
-      const response = await Axios.get(`${baseURL}/profile`, {
+      const response = await Axios.get(`${URL.baseURL}/profile`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',

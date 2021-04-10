@@ -1,13 +1,13 @@
 import BaseService from "./base-service";
 import axios from "axios";
-import {baseURL} from './UrlServices'
+import URL from './UrlServices'
 
 
 class HelpService extends BaseService {
 
   async create(data) {
     try {
-      const response = await axios.post(`${baseURL}/helps`, JSON.stringify(data), {
+      const response = await axios.post(`${URL.baseURL}/helps`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -28,7 +28,7 @@ class HelpService extends BaseService {
 
   async delete(id) {
     try {
-      const response = await axios.delete(`${baseURL}/helps/${id}`, 
+      const response = await axios.delete(`${URL.baseURL}/helps/${id}`, 
        {
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ class HelpService extends BaseService {
 
   async update(data) {
     try {
-      const response = await axios.patch(`${baseURL}/helps/${data.id}`,  JSON.stringify(data),
+      const response = await axios.patch(`${URL.baseURL}/helps/${data.id}`,  JSON.stringify(data),
        {
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ class HelpService extends BaseService {
 
   async getHelps() {
     try {
-      const response = await axios.get(`${baseURL}/helps`, {
+      const response = await axios.get(`${URL.baseURL}/helps`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -93,7 +93,7 @@ class HelpService extends BaseService {
   async getHelpsByCoordinates(tl, ll, bl, rl) {
     try {
       const response = await axios.get(`
-        ${baseURL}/helps?coordinates=true&leftLong=${ll}&rightLong=${rl}&topLat=${tl}&bottomLat=${bl}`, 
+        ${URL.baseURL}/helps?coordinates=true&leftLong=${ll}&rightLong=${rl}&topLat=${tl}&bottomLat=${bl}`, 
       {
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ class HelpService extends BaseService {
 
   async getHelp(id) {
     try {
-      const response = await axios.get(`${baseURL}/helps/${id}`, {
+      const response = await axios.get(`${URL.baseURL}/helps/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -130,7 +130,7 @@ class HelpService extends BaseService {
 
   async myHelps(id) {
     try {
-      const response = await axios.get(`${baseURL}/helps/me`, {
+      const response = await axios.get(`${URL.baseURL}/helps/me`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -148,7 +148,7 @@ class HelpService extends BaseService {
 
   async categories() {
     try {
-      const response = await axios.get(`${baseURL}/categories`, {
+      const response = await axios.get(`${URL.baseURL}/categories`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -168,7 +168,7 @@ class HelpService extends BaseService {
 
   async reopen(id) {
     try {
-      const response = await axios.post(`${baseURL}/helps/reopen`, JSON.stringify({id}), {
+      const response = await axios.post(`${URL.baseURL}/helps/reopen`, JSON.stringify({id}), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',

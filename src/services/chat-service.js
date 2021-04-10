@@ -1,14 +1,14 @@
 import BaseService from "./base-service";
 import axios from "axios";
 
-import baseURL from './UrlServices'
+import URL from './UrlServices'
 
 class ChatService extends BaseService {
 
 
   async create(data) {
     try {
-      const response = await axios.post(`${baseURL}/chats`, JSON.stringify(data), {
+      const response = await axios.post(`${URL.baseURL}/chats`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -29,7 +29,7 @@ class ChatService extends BaseService {
 
   async fetch(id) {
     try {
-      const response = await axios.get(`${baseURL}/chats/help/${id}`, {
+      const response = await axios.get(`${URL.baseURL}/chats/help/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
