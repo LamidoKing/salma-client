@@ -71,7 +71,7 @@ class UserService extends BaseService {
     if (this.getUser()) {
       return this.getUser();
     } else {
-      const response = await Axios.get(this.endpoint + '/profile', {
+      const response = await Axios.get(`${baseURL}/profile`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
