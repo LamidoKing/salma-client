@@ -8,7 +8,7 @@ import {
 } from '../redux/actions';
 import store from '../redux/store';
 
-import baseURL from './base-service'
+import {baseURL} from './UrlServices'
 
 class UserService extends BaseService {
 

@@ -1,6 +1,6 @@
 import BaseService from "./base-service";
 import axios from "axios";
-import baseURL from './base-service'
+import {baseURL} from './UrlServices'
 
 
 class HelpService extends BaseService {

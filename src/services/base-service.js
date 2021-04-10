@@ -1,10 +1,6 @@
 import store from '../redux/store';
 
 
-const baseURL =
-window.location.hostname === "localhost"
-  ? "http://localhost:3000/api/v1"
-  : "https://fast-ridge-64559.herokuapp.com/api/v1"
 
 class BaseService {
   // baseurl = process.env.REACT_APP_API_URL;
