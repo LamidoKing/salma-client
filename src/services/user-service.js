@@ -8,17 +8,14 @@ import {
 } from '../redux/actions';
 import store from '../redux/store';
 
-// import baseURL from './base-service'
+import baseURL from './base-service'
 
 class UserService extends BaseService {
 
 
 
   async register(data) {
-    const baseURL =
-window.location.hostname === "localhost"
-  ? "http://localhost:3000/api/v1"
-  : "https://fast-ridge-64559.herokuapp.com/api/v1"
+    
 
     try {
       const response = await Axios.post(`${baseURL}/users`, 
