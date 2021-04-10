@@ -8,7 +8,7 @@ const cableURL =
     : "wss://fast-ridge-64559.herokuapp.com/cable"
 
 const consumer = () => {
-  return ActionCable.createConsumer(`cableURL?token=${userService.token()}`);
+  return ActionCable.createConsumer(`${cableURL}?token=${userService.token()}`);
 }
 
 export const HelpChannel = () => {
