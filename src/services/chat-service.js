@@ -1,12 +1,13 @@
 import BaseService from "./base-service";
 import axios from "axios";
+import baseURL from './base-service'
 
 class ChatService extends BaseService {
 
 
   async create(data) {
     try {
-      const response = await axios.post(`https://fast-ridge-64559.herokuapp.com/api/v1/chats`, JSON.stringify(data), {
+      const response = await axios.post(`${baseURL}/chats`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -27,7 +28,7 @@ class ChatService extends BaseService {
 
   async fetch(id) {
     try {
-      const response = await axios.get(`https://fast-ridge-64559.herokuapp.com//api/v1/chats/help/${id}`, {
+      const response = await axios.get(`${baseURL}/chats/help/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
