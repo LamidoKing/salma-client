@@ -91,7 +91,7 @@ class Register extends Component {
   _validate_image = (file) => {
     const mime = (file.split(';')[0]).split(':')[1];
     console.log(mime);
-    if (mime === 'image/png' || mime === 'image/jpeg' || mime === 'image/gif') {
+    if (mime === 'image/png' || mime === 'image/jpeg' || mime === 'image/pdf') {
       return true;
     } else {
       return false

@@ -39,19 +39,19 @@ class CreateHelp extends ActionCableBase {
     });
   };
 
-    getPosition (position){
-      const currentPosition = {
-        lat: position.coords.latitude,
-        long: position.coords.longitude
-      }
-      // if (position.coords) return this.setState({lat: position.coords.latitude,  long: position.coords.longitude});
-console.log(currentPosition)
+//     getPosition (position){
+//       const currentPosition = {
+//         lat: position.coords.latitude,
+//         long: position.coords.longitude
+//       }
+//       if (position.coords) return this.setState({lat: position.coords.latitude,  long: position.coords.longitude});
+// console.log(currentPosition)
 
-this.setState({
+// this.setState({
   
 
-})
-    };
+// })
+//     };
 
 
 
