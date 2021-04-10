@@ -10,7 +10,7 @@ const cableURL =
 class ActionCableBase extends React.Component {
   constructor() {
     super();
-    this.consumer = actioncable.createConsumer(`${cableURL}/cable?token=${userService.token()}`)
+    this.consumer = actioncable.createConsumer(`${cableURL}?token=${userService.token()}`)
   }
   
   render() { 
