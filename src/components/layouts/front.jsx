@@ -8,10 +8,10 @@ import { Helmet } from 'react-helmet';
 import actioncable from 'actioncable';
 
 
-const cableURL =
-  window.location.hostname === "localhost"
-    ? "ws://localhost:3000/cable"
-    : "wss://fast-ridge-64559.herokuapp.com/cable"
+const cableURL ="ws://localhost:3000/cable"
+  // window.location.hostname === "localhost"
+  //   ? "ws://localhost:3000/cable"
+  //   : "wss://fast-ridge-64559.herokuapp.com/cable"
 
 
 const CableApp = {}
