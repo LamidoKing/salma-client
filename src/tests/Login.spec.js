@@ -37,14 +37,14 @@ describe('Login page', () => {
       expect(wrapper.find(Alert).length).toEqual(1);
     });
   
-    it('should throw an error if the email field is blank', () => {
-      const alert = shallow(<Alert />)
-      wrapper.find('.submit').simulate('click');
-      expect(alert.find('div').length).toBe(1)
+    // it('should throw an error if the email field is blank', () => {
+    //   const alert = shallow(<Alert />)
+    //   wrapper.find('.submit').simulate('click');
+    //   expect(alert.find('div').length).toBe(1)
       
-      // expect(alert.find('div').prop('className')).toBe('alert alert-danger');
-      // expect(alert.find('div').text()).toContain('Email is required');
-    });
+    //   expect(alert.find('div').prop('className')).toBe('alert alert-danger');
+    //   expect(alert.find('div').text()).toContain('Email is required');
+    // });
   
     // it('should throw an error if the password field is blank', () => {
     //   wrapper.find('[type="email"]').simulate('change', { target: { name: 'email', value: 'kunsal@email.com' }})
