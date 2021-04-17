@@ -6,13 +6,13 @@ import userService from "../../services/user-service";
 import redirectIfNotLoggedIn from "../../middlewares/redirect-if-not-logged-in";
 import { Helmet } from 'react-helmet';
 import actioncable from 'actioncable';
-import {cableURL} from '../../services/UrlServices'
+import URL  from '../../services/UrlServices'
 
 
 
 const CableApp = {}
 
-CableApp.cable = actioncable.createConsumer(`${cableURL}?token=${userService.token()}`)
+CableApp.cable = actioncable.createConsumer(`${URL.cableURL}?token=${userService.token()}`)
 
 class Front extends Component {
   state = {
