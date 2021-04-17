@@ -6,12 +6,8 @@ import userService from "../../services/user-service";
 import redirectIfNotLoggedIn from "../../middlewares/redirect-if-not-logged-in";
 import { Helmet } from 'react-helmet';
 import actioncable from 'actioncable';
+import {cableURL} from '../../services/UrlServices'
 
-
-const cableURL ="ws://localhost:3000/cable"
-  // window.location.hostname === "localhost"
-  //   ? "ws://localhost:3000/cable"
-  //   : "wss://fast-ridge-64559.herokuapp.com/cable"
 
 
 const CableApp = {}
