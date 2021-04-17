@@ -27,10 +27,10 @@ class CreateHelp extends ActionCableBase {
   async componentDidMount() {
    
 
- navigator.geolocation.getCurrentPosition(this.getPosition)
       
 
     const categories = await helpService.categories();
+    console.log(categories)
     this.setState({categories});
     this.subscription = this.consumer.subscriptions.create({channel: 'HelpsChannel', id: 1 }, {
       received: (data) => {
