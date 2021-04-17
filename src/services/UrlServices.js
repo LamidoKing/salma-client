@@ -4,7 +4,7 @@ const baseURL =window.location.hostname === "localhost"
 
 const cableURL =window.location.hostname === "localhost"
     ? "ws://localhost:3000/cable"
-    : "ws://sheltered-reaches-03216.herokuapp.com/cable"
+    : "wss://sheltered-reaches-03216.herokuapp.com/cable"
 
 
 export  default {baseURL,cableURL};
