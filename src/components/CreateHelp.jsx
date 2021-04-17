@@ -32,7 +32,8 @@ class CreateHelp extends ActionCableBase {
     const categories = await helpService.categories();
     console.log(categories)
     this.setState({categories});
-    this.subscription = this.consumer.subscriptions.create({channel: 'HelpsChannel', id: 1 }, {
+    this.subscription = this.consumer.subscriptions.create({channel: 'HelpsChannel', id: 1 },
+     {
       received: (data) => {
         // console.log(data);
       }

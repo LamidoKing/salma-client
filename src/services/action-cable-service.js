@@ -5,12 +5,12 @@ import URL from './UrlServices'
 
 
 const consumer = () => {
-  return ActionCable.createConsumer(`${URL.cableURLL}?token=${userService.token()}`);
+  return ActionCable.createConsumer(`${URL.cableURL}?token=${userService.token()}`);
 }
 
 export const HelpChannel = () => {
   try {
-    return consumer.subscriptions.create({channel: 'HelpChannel'}, {
+    return consumer.subscriptions.create({channel: 'HelpsChannel'}, {
       received: () => console.log('Received info from help')
     })
   } catch (error) {
