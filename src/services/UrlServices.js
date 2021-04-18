@@ -1,10 +1,10 @@
-const baseURL =window.location.hostname === "localhost"
+const baseURL = window.location.hostname === "localhost"
   ? "http://localhost:3000/api/v1"
-  : "https://sheltered-reaches-03216.herokuapp.com/api/v1"
+  : process.env.REACT_APP_API_URL
 
-const cableURL =window.location.hostname === "localhost"
+const cableURL = window.location.hostname === "localhost"
     ? "ws://localhost:3000/cable"
-    : "wss://sheltered-reaches-03216.herokuapp.com/cable"
+    : process.env.REACT_APP_SOCKET_URL
 
 
-export  default {baseURL,cableURL};
+export default { baseURL, cableURL};

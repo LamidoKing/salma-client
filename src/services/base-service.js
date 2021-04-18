@@ -3,12 +3,12 @@ import store from '../redux/store';
 
 
 class BaseService {
-  // baseurl = process.env.REACT_APP_API_URL;
+  // URL.baseURL = process.env.REACT_APP_API_URL;
   // endpoint;
 
 
   // constructor() {
-  //   this.endpoint = this.baseurl+'/api/v1';
+  //   this.endpoint = this.URL.baseURL+'/api/v1';
   // }
 
   errorMessage(message) {

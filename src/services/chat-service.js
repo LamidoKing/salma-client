@@ -1,6 +1,5 @@
 import BaseService from "./base-service";
 import axios from "axios";
-
 import URL from './UrlServices'
 
 class ChatService extends BaseService {

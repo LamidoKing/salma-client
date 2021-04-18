@@ -2,8 +2,6 @@ import userService from "./user-service";
 import ActionCable from 'actioncable'
 import URL from './UrlServices'
 
-
-
 const consumer = () => {
   return ActionCable.createConsumer(`${URL.cableURL}?token=${userService.token()}`);
 }
